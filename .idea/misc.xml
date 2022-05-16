@@ -34,6 +34,15 @@
         <entry key="..\:/Users/subin/AndroidStudioProjects/udemy_android_template_bottomnavi/app/src/main/res/layout/fragment_songfile.xml" value="0.20478837109876016" />
         <entry key="..\:/Users/subin/AndroidStudioProjects/udemy_android_template_bottomnavi/app/src/main/res/layout/fragment_video.xml" value="0.4" />
         <entry key="..\:/Users/subin/AndroidStudioProjects/udemy_android_template_bottomnavi/app/src/main/res/menu/bottom_nav_menu.xml" value="0.24947916666666667" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.2352555426998415" />
+        <entry key="app/src/main/res/layout/activity_song.xml" value="0.23854166666666668" />
+        <entry key="app/src/main/res/layout/activity_splash.xml" value="0.10729166666666666" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.23802083333333332" />
+        <entry key="app/src/main/res/layout/fragment_locker.xml" value="0.23802083333333332" />
+        <entry key="app/src/main/res/layout/fragment_savedsong.xml" value="0.23802083333333332" />
+        <entry key="app/src/main/res/layout/fragment_songfile.xml" value="0.23802083333333332" />
+        <entry key="app/src/main/res/layout/item_album.xml" value="0.23802083333333332" />
+        <entry key="app/src/main/res/layout/item_song.xml" value="0.23802083333333332" />
       </map>
     </option>
   </component>
