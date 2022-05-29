@@ -29,7 +29,6 @@ class SongActivity : AppCompatActivity() {
         initSong()
         initClickListener()
 
-
     }
 
     //따로 추가함
@@ -37,26 +36,28 @@ class SongActivity : AppCompatActivity() {
         binding.songProgressSb.progress = (song.second*100000)/song.playTime
     }
 
-    override fun onStart() {
-        super.onStart()
-        val sharedPreferences = getSharedPreferences("song", MODE_PRIVATE)
-        val songJson = sharedPreferences.getString("songData", null);
-
-        songs[nowPos] = if(songJson == null){
-            Song("라일락", "아이유(IU)", 0, 60, false, "music_l딸lac")
-        }else{
-            gson.fromJson(songJson, Song::class.java) // songJson 객체를 song class java 객체로 변환
-        }
-
-        setMiniPlayer(songs[nowPos])
-
-
-    } // 따로 추가함
+//    override fun onStart() {
+//        super.onStart()
+//        val sharedPreferences = getSharedPreferences("song", MODE_PRIVATE)
+//        val songJson = sharedPreferences.getString("songData", null);
+//
+//        songs[nowPos] = if(songJson == null){
+//            Song("라일락", "아이유(IU)", 0, 60, false, "music_l딸lac")
+//        }else{
+//            gson.fromJson(songJson, Song::class.java) // songJson 객체를 song class java 객체로 변환
+//        }
+//
+//        setMiniPlayer(songs[nowPos])
+//
+//
+//    } // 따로 추가함
 
     override fun onPause() {
         super.onPause()
-        setPlayerStatus(false)
         songs[nowPos].second = ((binding.songProgressSb.progress * songs[nowPos].playTime)/100)/1000
+        songs[nowPos].isPlaying = false
+        setPlayerStatus(false)
+
         val sharedPreferences = getSharedPreferences("song", MODE_PRIVATE)
         val editor = sharedPreferences.edit() // 에디터
 
@@ -149,7 +150,7 @@ class SongActivity : AppCompatActivity() {
     private fun getPlayingSongPosition(songId: Int): Int{
         for(i in 0 until songs.size){
             if(songs[i].id == songId){
-
+                return i
             }
         }
         return 0

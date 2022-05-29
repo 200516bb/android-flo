@@ -27,7 +27,7 @@ class SavedSongRVAdapter(): RecyclerView.Adapter<SavedSongRVAdapter.ViewHolder>(
         holder.bind(songs[position])
         holder.binding.itemSongMoreIv.setOnClickListener{
             mItemClickListener.onRemoveSong(songs[position].id)
-            removeSongs(position)
+            removeSong(position)
         }
     }
 
@@ -42,7 +42,7 @@ class SavedSongRVAdapter(): RecyclerView.Adapter<SavedSongRVAdapter.ViewHolder>(
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    fun removeSongs(position: Int){
+    fun removeSong(position: Int){
         songs.removeAt(position)
         notifyDataSetChanged()
     }
